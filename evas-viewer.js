@@ -17,7 +17,14 @@ function initViewer(containerId, modelPath) {
   const loader = new GLTFLoader();
   loader.load(modelPath, function (gltf) {
     const model = gltf.scene;
-    model.scale.set(1.5, 1.5, 1.5);
+    //Escala del modelo
+    model.scale.set(1, 1, 1);
+    //visor 
+    // Centrar modelo automáticamente
+  const box = new THREE.Box3().setFromObject(model);
+  const center = box.getCenter(new THREE.Vector3());
+  model.position.sub(center); // Centra el modelo completo
+  
     scene.add(model);
     animate();
   }, undefined, function (error) {
@@ -27,7 +34,7 @@ function initViewer(containerId, modelPath) {
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
 
-  camera.position.set(0, 1.5, 3);
+  camera.position.set(1, 2, 8.3);
   controls.update();
 
   function animate() {

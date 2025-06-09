@@ -126,5 +126,14 @@ terminalInput.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   updateLanguage('es'); // idioma por defecto
   rotateQuotes();
+
+  // Reproducir música tras el primer clic del usuario
+  const music = document.getElementById('bg-music');
+  function playMusicOnce() {
+    if (music) music.play();
+    document.removeEventListener('click', playMusicOnce);
+  }
+  document.addEventListener('click', playMusicOnce);
+
 });
 
