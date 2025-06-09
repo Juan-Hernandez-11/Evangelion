@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Evangelion</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="bg-music" autoplay loop>
+    <source src="fly-me-to-the-moon.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+
+  <header>
+    <div class="logo blink">NERV</div>
+    <select id="language-selector">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+      <option value="jp">日本語</option>
+    </select>
+
+<nav id="main-menu">
+  <button data-target="intro">Inicio</button>
+  <button data-target="rei">Rei Ayanami</button>
+  <button data-target="characters">Personajes</button>
+  <button data-target="corporations">Corporaciones</button>
+  <button data-target="evas">EVAs</button>
+  <button data-target="quotes">Frases</button>
+</nav>
+
+  </header>
+
+  <main>
+    <section id="intro">
+      <h1 class="fade-in" data-i18n="title">Bienvenido a Evangelion</h1>
+      <p class="fade-in" data-i18n="subtitle">Explora el mundo de los EVAs y los Ángeles</p>
+    </section>
+
+    <section id="rei">
+      <h2 data-i18n="rei_title">Rei Ayanami</h2>
+      <img src="images/rei.png" alt="Rei Ayanami">
+      <p data-i18n="rei_desc">
+        Primer Niño. Piloto del EVA-00. Enigmática y emocionalmente distante, pero profundamente importante.
+      </p>
+    </section>
+
+    
+    <section id="quotes">
+      <h3 data-i18n="quotes_title">Frases Icónicas</h3>
+      <blockquote id="quote">"El dolor trae crecimiento."</blockquote>
+    </section>
+  </main>
+
+    <section id="characters">
+  <h2 data-i18n="characters_title">Personajes Principales</h2>
+  <div class="character-list">
+    <!-- Ejemplo personaje -->
+    <div class="character-card">
+      <img src="images/rei.png" alt="Rei Ayanami">
+      <h3>Rei Ayanami</h3>
+      <p>Piloto del EVA-00, misteriosa y emocionalmente distante.</p>
+    </div>
+    <div class="character-card">
+      <img src="images/shinji.png" alt="Shinji Ikari">
+      <h3>Shinji Ikari</h3>
+      <p>Piloto del EVA-01, protagonista principal con conflictos internos profundos.</p>
+    </div>
+    <div class="character-card">
+      <img src="images/asuka.png" alt="Asuka Langley">
+      <h3>Asuka Langley</h3>
+      <p>Piloto del EVA-02, orgullosa y competitiva.</p>
+    </div>
+    <!-- Agrega más personajes aquí -->
+  </div>
+</section>
+
+<section id="corporations">
+  <h2 data-i18n="corporations_title">Corporaciones y Organizaciones</h2>
+  <div class="corp-list">
+    <div class="corp-card">
+      <h3>NERV</h3>
+      <p>Organización encargada de la defensa contra los Ángeles, operadora de los EVAs.</p>
+    </div>
+    <div class="corp-card">
+      <h3>SEELE</h3>
+      <p>Organización secreta que controla NERV y tiene sus propios planes para la Humanidad.</p>
+    </div>
+    <!-- Agrega más corporaciones si quieres -->
+  </div>
+</section>
+
+<section id="evas">
+  <h2 data-i18n="evas_title">Unidades EVA</h2>
+
+  <div class="eva-box">
+  <h3>EVA-00</h3>
+  <div id="eva00-viewer" class="viewer"></div>
+  <p>Unidad Prototipo EVA-00. Pilotada por Rei Ayanami.</p>
+</div>
+
+<div class="eva-box">
+  <h3>EVA-01</h3>
+  <div id="eva01-viewer" class="viewer"></div>
+  <p>Unidad de prueba. Piloto principal: Shinji Ikari.</p>
+</div>
+
+<div class="eva-box">
+  <h3>EVA-02</h3>
+  <div id="eva02-viewer" class="viewer"></div>
+  <p>Primer EVA de producción. Pilotada por Asuka Langley.</p>
+</div>
+
+</section>
+
+
+  <section id="terminal-section">
+  <h3>Terminal NERV</h3>
+  <div id="terminal-output" tabindex="0"></div>
+  <input type="text" id="terminal-input" placeholder="Escribe un comando y presiona Enter">
+</section>
+
+  <script src="app.js"></script>
+<script type="module" src="evas-viewer.js"></script>
+
+</body>
+
+</html>
